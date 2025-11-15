@@ -1,0 +1,33 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: wordpress
+  namespace: wordpress
+spec:
+  interval: 5m
+  releaseName: wordpress
+  chart:
+    spec:
+      chart: wordpress
+      version: "14.3.4"    # adjust or pin as needed
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+  install:
+    createNamespace: true
+  values:
+    global:
+      imageRegistry: docker.io
+    wordpressUsername: admin
+    wordpressPassword: adminpassword
+    wordpressEmail: admin@example.com
+    mariadb:
+      enabled: false          # disable bundled database (we use MySQL chart)
+    externalDatabase:
+      host: mysql.mysql.svc.cluster.local   # service name for the MySQL chart in namespace mysql
+      user: wpuser
+      password: ""
+      # we prefer to let the chart read password from existingSecret:
+      existingSecret: mysql-secret
+
