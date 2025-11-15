@@ -1,8 +1,4 @@
-# Private keys (never commit)
 age.key
-
-# Plain Kubernetes secrets (temporary files)
-mysql-secret.yaml
-*.secret.yaml
-*.key
+*.agekey
+key.txt
 
