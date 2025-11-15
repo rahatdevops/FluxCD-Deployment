@@ -1,2 +1,3 @@
 gitops-keys
 .sops.yaml
+age.key
