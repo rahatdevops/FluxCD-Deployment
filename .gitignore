@@ -1,7 +1,8 @@
-gitops-keys
-.sops.yaml
+# Private keys (never commit)
 age.key
-# Ignore plain Kubernetes secrets
+
+# Plain Kubernetes secrets (temporary files)
 mysql-secret.yaml
+*.secret.yaml
 *.key
 
