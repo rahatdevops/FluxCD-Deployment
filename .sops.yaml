@@ -1,5 +1,5 @@
 creation_rules:
   - path_regex: mysql-secret.yaml
     encrypted_regex: "^(data|stringData)$"
-    age: age18f6eruhf5l0wzmrl66ms4l2qgrmrf6w56xg3ejjl972jxv2qffass700gp
+    age: "age18f6eruhf5l0wzmrl66ms4l2qgrmrf6w56xg3ejjl972jxv2qffass700gp"
 
