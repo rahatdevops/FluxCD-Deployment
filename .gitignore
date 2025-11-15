@@ -1,3 +1,7 @@
 gitops-keys
 .sops.yaml
 age.key
+# Ignore plain Kubernetes secrets
+mysql-secret.yaml
+*.key
+
